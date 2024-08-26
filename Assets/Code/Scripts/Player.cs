@@ -11,5 +11,6 @@ public class Player : MonoBehaviour, ISelectable
     {
         unit = new Unit(unitType, transform);
     }
+
     public Unit Select() => unit;
 }
