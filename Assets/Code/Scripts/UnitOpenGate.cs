@@ -23,7 +23,12 @@ public class UnitOpenGate : MonoBehaviour, IExecutable
         Vector3 directionNormilzed = (hitPosition - transform.position).normalized;
 
         transform.forward = directionNormilzed;
+        unit.GetAnimationController().PlayWorkingOnDevice();
+        targetTransform.GetComponent<IInteractable>().Interact(OnActionEnd);
+    }
 
-        targetTransform.GetComponent<IInteractable>().Interact();
+    private void OnActionEnd()
+    {
+        unit.GetAnimationController().PlayIdle();
     }
 }

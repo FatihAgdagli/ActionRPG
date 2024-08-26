@@ -384,5 +384,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f9cf07808a5414591c2dc455e1c112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 2
+  interactionRange: 4
   animatorController: {fileID: 1684284254479077617}

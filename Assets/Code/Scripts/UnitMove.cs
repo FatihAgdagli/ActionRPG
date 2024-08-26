@@ -34,6 +34,7 @@ public class UnitMove : MonoBehaviour, IExecutable
         {
             transform.position = targetPosition;
             isMoving = false;
+            unit.GetAnimationController().PlayIdle();
         }
     }
 
@@ -50,5 +51,6 @@ public class UnitMove : MonoBehaviour, IExecutable
         transform.forward = directionNormilzed;
         this.targetPosition = hitPosition;
         isMoving = true;
+        unit.GetAnimationController().PlayRun();
     }
 }

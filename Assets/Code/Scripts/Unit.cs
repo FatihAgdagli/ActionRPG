@@ -8,11 +8,13 @@ public class Unit
 
     private List<IExecutable> unitExecuteList;
     private Transform transform;
+    private UnitAnimationController animationController;
 
     public Unit(UnitType unitType, Transform transform)
     {
         UnitType = unitType;
         this.transform = transform;
+        animationController = transform.GetComponent<UnitAnimationController>();
         InitializeActions();
     }
 
@@ -44,12 +46,7 @@ public class Unit
 
     public Transform GetTransform() => transform;
 
-    public void GoTarget(Vector3 targetPosition)
-    {
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        direction.y = 0;
-        transform.forward = direction;
-    }
+    public UnitAnimationController GetAnimationController() => animationController;
 }
 
 public enum UnitType
