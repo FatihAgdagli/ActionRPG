@@ -6,7 +6,7 @@ public class UnitMove : MonoBehaviour, IExecutable
 {
 
     [SerializeField] 
-    private float moveSpeed = 5f;
+    private float moveSpeed = 10f;
     private Unit unit;
     private UnitActionType unitActionType;
     private bool isMoving;
@@ -14,7 +14,7 @@ public class UnitMove : MonoBehaviour, IExecutable
 
     private void Start()
     {
-        unit = GetComponent<Player>().Select();
+        unit = GetComponent<Player>().GetUnit();
         unit.AddActionList(this);
         unitActionType = UnitActionType.MoveAction;
     }

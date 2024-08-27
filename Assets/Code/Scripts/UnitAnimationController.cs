@@ -28,7 +28,7 @@ public class UnitAnimationController : MonoBehaviour
 
     public void PlayIdle()
     {
-        SetAnimtaionState((AnimationState)UnityEngine.Random.Range(0, 2));
+        SetAnimtaionState(AnimationState.Idle_01);
     }
 
     public void PlayAttack()

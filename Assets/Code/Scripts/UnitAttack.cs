@@ -7,7 +7,7 @@ public class UnitAttack : MonoBehaviour, IExecutable
 
     private void Start()
     {
-        unit = GetComponent<Player>().Select();
+        unit = GetComponent<Player>().GetUnit();
         unit.AddActionList(this);
         unitActionType = UnitActionType.AttackAction;
     }

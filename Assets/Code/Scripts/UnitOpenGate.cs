@@ -7,7 +7,7 @@ public class UnitOpenGate : MonoBehaviour, IExecutable
 
     private void Start()
     {
-        unit = GetComponent<Player>().Select();
+        unit = GetComponent<Player>().GetUnit();
         unit.AddActionList(this);
         unitActionType = UnitActionType.OpenGateAction;
     }
@@ -30,5 +30,6 @@ public class UnitOpenGate : MonoBehaviour, IExecutable
     private void OnActionEnd()
     {
         unit.GetAnimationController().PlayIdle();
+        Debug.Log("Gate Opened animation ended");
     }
 }

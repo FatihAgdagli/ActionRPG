@@ -1,6 +1,3 @@
-using Cinemachine;
-using System;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class ControlSystem : MonoBehaviour
@@ -15,7 +12,7 @@ public class ControlSystem : MonoBehaviour
 
     private Vector2 screenSize;
     private float edgeDistance = 100f;
-    private float cameraMoveSpeed = 5f;
+    private float cameraMoveSpeed = 10f;
 
     private void Awake()
     {
@@ -140,6 +137,12 @@ public class ControlSystem : MonoBehaviour
         if (!hit.transform.root.TryGetComponent(out ISelectable selectable))
         {
             return;
+        }
+        if (selectedUnit != null)
+        {
+            selectedUnit.GetTransform().
+                GetComponent<ISelectable>().
+                Deselect();
         }
         selectedUnit = selectable.Select();
         isBusy = true;
